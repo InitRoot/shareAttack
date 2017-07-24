@@ -1,16 +1,36 @@
-# shareAttack
-*Crawl any windows network for computers and subsequently launch an attack on weak file permissions.*
+# ShareAttack!
+*Crawl any windows network with Active Directory for computers and subsequently launch an attack on weak file permissions.*
 
-**Usage:** Use to crawl any network for computers, subsequently launching an attack on weak file permissions.
-The script will start denying any user access to the file share.
+__Usage__: Run ShareAttack!.py, ensure DSQUERY and SHARELOCATOR are included in the same root folder.
 
-**Synops:** Use the attack for diversion, test response of security systems.
-Several companies still make use of file drops and pickups to transfer data, when
-access to the specified location is denied business operations can be stalled.
-Without knowing the network by heart this offers an easy attack method. 
+__Synops:__ This attack exploits weak file permissions allowing users to overwrite file permissions assigned to file shares.
+Instead of exploiting file shares to gain access, the attack focuses on DENYING access to file shares. The attack uses the exploited account's credentials, (administrator account will be much more powerful). 
 
-**Version:** 0.1       
+__Files:__ 
+* ShareAttack!.py (_main file to launch attack_)
+* dsquery.exe (_standard DSQUERY to extract AD computers_)
+* sharelocator.exe (_Custom created file to extract file shares using srvsvc.NetShareEnumAll MSRPC function and then apply deny   permissions_)
 
-**Parameters:** *$crawl_limit*: set amount of computers to extract from AD, 0 extracts all.
+__Walkthrough:__
+1. Load files onto target.
+2. Execute ShareAttack!.py
+3. Will automatically execute dsquery command to extract domain computers.
+4. Test computers and retain active hosts.
+5. Pass active computers onto ShareLocator.
+6. ShareLocator will find all fileshares on target.
+7. Attempt to apply DENY permission for each user with access.
 
+__Requirements:__
+* Windows computer environment, with AD for dsquery.
+* Python 3.6 feel free to port, reference GIT please.
+* Weak file permissions :P
+
+__Version:__ 0.1       
+
+__Parameters:__ *$crawl_limit*: set amount of computers to extract from AD, 0 extracts all.
+
+__Alternatives [future todo]:__
+* ShareAttack!.py not required, can use only sharelocator.exe ```Sharelocator <servername>```
+* Replace DSQUERY with IP range or provide option to user at startup
+* Port .py to Windowns
 
