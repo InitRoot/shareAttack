@@ -32,5 +32,5 @@ __Parameters:__ *$crawl_limit*: set amount of computers to extract from AD, 0 ex
 __Alternatives [future to-do]:__
 * ShareAttack!.py not required, can use only sharelocator.exe ```Sharelocator <servername>```
 * Replace DSQUERY with IP range or provide option to user at startup
-* Port .py to Windowns
+* Port .py to Windows
 
