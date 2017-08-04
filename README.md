@@ -34,3 +34,5 @@ __Alternatives [future to-do]:__
 * Replace DSQUERY with IP range or provide option to user at startup
 * Port .py to Windows
 
+__Note that non lethal version is uploaded, please comment to request lethal version__
+
