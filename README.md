@@ -8,7 +8,7 @@ Instead of exploiting file shares to gain access, the attack focuses on DENYING 
 
 __Files:__ 
 * ShareAttack!.py (_main file to launch attack_)
-* dsquery.exe (_standard DSQUERY to extract AD computers_)
+* dsquery.exe (_standard DSQUERY to extract AD computers_) https://technet.microsoft.com/en-us/library/cc732952(v=ws.11).aspx
 * sharelocator.exe (_Extract file shares from target server using srvsvc.NetShareEnumAll MSRPC function and then apply deny   permissions (C++ please request source)_)
 
 __Walkthrough:__
