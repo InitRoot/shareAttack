@@ -1,3 +1,6 @@
+##  Disclaimer
+I take not responsibility for your use of the software. Development is done in my personal capacity and carry no affiliation to my work.
+
 # ShareAttack!
 *Crawl any windows network with Active Directory for computers and subsequently launch an attack on weak file permissions.*
 
